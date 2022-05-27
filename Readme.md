@@ -30,17 +30,17 @@ Cara menjalankan Container :
 7. Setelah itu, input "pip freeze > requirements.txt" pada terminal
 8. Kemudian buat file bernama "Dockerfile" dan isilah file tersebut dengan kode berikut :
 
-    FROM python:3.10
+        FROM python:3.10
 
-    WORKDIR /fastapi-app
+        WORKDIR /fastapi-app
 
-    COPY requirements.txt . 
+        COPY requirements.txt . 
 
-    RUN pip install -r requirements.txt
+        RUN pip install -r requirements.txt
 
-    COPY ./app ./app
+        COPY ./app ./app
 
-    CMD ["python", "./app/aliens.py"]
+        CMD ["python", "./app/aliens.py"]
 
 9. Lalu input "docker build -t python-fastapi ."
 10. Lalu input "docker run -p 8000:8000 python-fastapi" dan tekan "ctrl + left klik" pada link yang tersedia.
